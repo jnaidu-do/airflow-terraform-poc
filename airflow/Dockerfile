@@ -15,9 +15,15 @@ RUN apt-get update && \
     fi && \
     unzip terraform.zip && \
     mv terraform /usr/local/bin/ && \
-    chmod +x /usr/local/bin/terraform && \
+    chown airflow:airflow /usr/local/bin/terraform && \
+    chmod 777 /usr/local/bin/terraform && \
     rm terraform.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# Create a directory for Terraform and set permissions
+RUN mkdir -p /opt/airflow/terraform && \
+    chown -R airflow:root /opt/airflow/terraform && \
+    chmod -R 775 /opt/airflow/terraform
 
 USER airflow 
