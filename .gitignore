@@ -1,0 +1,91 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Terraform
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/.tfstate.lock.info
+**/crash.log
+**/*.tfvars
+**/*.tfvars.json
+**/override.tf
+**/override.tf.json
+**/.terraformrc
+**/terraform.rc
+**/.terraform.lock.hcl
+
+# Logs
+*.log
+logs/
+airflow/logs/
+airflow/plugins/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Local development
+*.local
+*.local.*
+local_settings.py
+local_settings.pyc
+
+# Airflow specific
+airflow/airflow.cfg
+airflow/airflow.db
+airflow/webserver_config.py
+airflow/airflow-webserver.pid
+airflow/airflow-scheduler.pid
+
+# API specific
+api/__pycache__/
+api/.pytest_cache/
+api/.coverage
+api/htmlcov/
+
+# Misc
+*.bak
+*.tmp
+*.temp
+*.swp
+*.swo
+*~ 

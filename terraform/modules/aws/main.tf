@@ -1,4 +1,5 @@
 resource "aws_instance" "instance" {
+  count         = var.instance_count
   ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = var.subnet_id
@@ -7,23 +8,23 @@ resource "aws_instance" "instance" {
 
   tags = merge(
     {
-      Name = var.instance_name
+      Name = "${var.instance_name}-${count.index + 1}"
     },
     var.tags
   )
 }
 
-output "instance_id" {
-  description = "ID of the created EC2 instance"
-  value       = aws_instance.instance.id
+output "instance_ids" {
+  description = "IDs of the created EC2 instances"
+  value       = aws_instance.instance[*].id
 }
 
-output "private_ip" {
-  description = "Private IP of the created EC2 instance"
-  value       = aws_instance.instance.private_ip
+output "private_ips" {
+  description = "Private IPs of the created EC2 instances"
+  value       = aws_instance.instance[*].private_ip
 }
 
-output "public_ip" {
-  description = "Public IP of the created EC2 instance"
-  value       = aws_instance.instance.public_ip
+output "public_ips" {
+  description = "Public IPs of the created EC2 instances"
+  value       = aws_instance.instance[*].public_ip
 } 
