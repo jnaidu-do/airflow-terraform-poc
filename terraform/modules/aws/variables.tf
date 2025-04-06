@@ -27,4 +27,10 @@ variable "tags" {
   description = "Additional tags for the EC2 instance"
   type        = map(string)
   default     = {}
+}
+
+variable "instance_count" {
+  description = "Number of instances to create"
+  type        = number
+  default     = 1
 } 
